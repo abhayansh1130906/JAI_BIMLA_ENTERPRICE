@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="place_order.css">
     
 </head>
-<body>    <div class="container">
-        <h2>Place Order</h2>        <form id="orderForm" action="https://formsubmit.co/abhayanshsharma71@gmail.com" method="POST">
-            <input type="hidden" name="_next" value="https://jaibimlaenterprises.com/thanks.html">
+<body>    <div class="container">        <h2>Place Order</h2>        <form id="orderForm" action="https://formsubmit.co/abhayanshsharma71@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="home.html">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_subject" value="New Order Received!">
             
             <label for="name">Full Name</label>
@@ -35,11 +36,17 @@
         </div>
     </div>    <script>
         document.getElementById('orderForm').addEventListener('submit', function(e) {
-            // Don't prevent default - let the form submit
+            e.preventDefault();
+            
+            // Show confirmation message
             this.style.display = 'none';
             document.getElementById('confirmation').style.display = 'block';
             
-            // Form will automatically redirect after submission
+            // Submit form and redirect
+            setTimeout(() => {
+                this.submit();
+                window.location.href = 'home.html';
+            }, 2000);
         });
     </script>
 </body>
