@@ -9,8 +9,11 @@
 </head>
 <body>
     <div class="container">
-        <h2>Place Order</h2>
-        <form id="orderForm">            <label for="name">Full Name</label>
+        <h2>Place Order</h2>        <form id="orderForm" action="https://formsubmit.co/jaibimlaenterprises@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="https://jaibimlaenterprises.com/thanks.html">
+            <input type="hidden" name="_subject" value="New Order Received!">
+            
+            <label for="name">Full Name</label>
             <input type="text" id="name" name="name" pattern="[A-Za-z\s\.\-']+" title="Please enter a valid name (only letters, spaces, dots, hyphens and apostrophes are allowed)" required>
 
             <label for="phone">Phone Number</label>
@@ -31,17 +34,13 @@
         <div id="confirmation" style="display:none; margin-top:20px; color:green; text-align:center;">
             Thank you! Your order has been placed.
         </div>
-    </div>
-    <script>
+    </div>    <script>
         document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Don't prevent default - let the form submit
             this.style.display = 'none';
             document.getElementById('confirmation').style.display = 'block';
             
-            // Redirect to home page after 2 seconds
-            setTimeout(function() {
-                window.location.href = 'home.html';
-            }, 2000);
+            // Form will automatically redirect after submission
         });
     </script>
 </body>

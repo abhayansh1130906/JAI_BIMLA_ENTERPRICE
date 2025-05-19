@@ -25,6 +25,30 @@
   }
 }
 
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -120,15 +144,15 @@ nav a:hover {
   min-height: 80vh;
   padding: 100px 20px;
   text-align: center;
-  background: url('project4.jpg') no-repeat center center;
-  background-size: contain;
-  background-color: rgba(0, 0, 0, 0.8);
+  background: url('project4.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: white;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .hero-img {
@@ -143,14 +167,36 @@ nav a:hover {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(-45deg, rgba(238, 119, 82, 0.7), rgba(231, 60, 126, 0.7), rgba(35, 166, 213, 0.7), rgba(35, 213, 171, 0.7));
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
   z-index: 0;
+  pointer-events: none;
 }
 
 .hero h2, .hero p {
   position: relative;
   z-index: 1;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin: 0 auto;
+  max-width: fit-content;
+}
+
+.typing-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3.5s steps(40, end) forwards;
+}
+
+.typing-effect-2 {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  opacity: 0;
+  animation: 
+    fadeIn 0.5s ease forwards 3.5s,
+    typing 3s steps(40, end) forwards 4s;
 }
 
 .section {
