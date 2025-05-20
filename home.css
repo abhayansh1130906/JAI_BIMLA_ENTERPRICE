@@ -99,6 +99,15 @@ header {
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  image-rendering: -webkit-optimize-contrast;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .company-info {
@@ -329,7 +338,7 @@ nav a:hover {
   max-width: 200px;
 }
 
-.director img {
+.director-img {
   border-radius: 50%;
   margin-bottom: 10px;
   aspect-ratio: 1;
@@ -337,6 +346,11 @@ nav a:hover {
   border: 3px solid #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  image-rendering: -webkit-optimize-contrast;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  filter: brightness(1.02) contrast(1.02);
+  will-change: transform, box-shadow;
 }
 
 .director img:hover {
