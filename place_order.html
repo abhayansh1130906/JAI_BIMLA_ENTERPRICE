@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Place Order</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="place_order.css">
-    
+  <meta charset="UTF-8">
+  <title>Place Order</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="place_order.css">
 </head>
-<body>    <div class="container">        <h2>Place Order</h2>        <form id="orderForm" action="https://formsubmit.co/abhayanshsharma71@gmail.com" method="POST">
-            <input type="hidden" name="_next" value="home.html">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_subject" value="New Order Received!">
-            
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" pattern="[A-Za-z\s\.\-']+" title="Please enter a valid name (only letters, spaces, dots, hyphens and apostrophes are allowed)" required>
+<body>
+  <div class="container">
+    <h2>Place Order</h2>
+    <form id="orderForm" action="https://formsubmit.co/abhayanshsharma71@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="home.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="New Order Received!">
+      
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" pattern="[A-Za-z\s\.\-']+" title="Please enter a valid name (only letters, spaces, dots, hyphens and apostrophes are allowed)" required>
 
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number.">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number.">
 
-            <label for="address">Delivery Address</label>
-            <textarea id="address" name="address" rows="3" required></textarea>
+      <label for="address">Delivery Address</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
 
-            <label for="product">Product</label>
-            <input type="text" id="product" name="product" required>
+      <label for="product">Product</label>
+      <input type="text" id="product" name="product" required>
 
-            <label for="quantity">Quantity</label>
-            <input type="number" id="quantity" name="quantity" min="1" required>
+      <label for="quantity">Quantity</label>
+      <input type="number" id="quantity" name="quantity" min="1" required>
 
-            <button type="submit">Place Order</button>
-            <a href="home.html" class="home-btn">Home</a>
-        </form>
-        <div id="confirmation" style="display:none; margin-top:20px; color:green; text-align:center;">
-            Thank you! Your order has been placed.
-        </div>
-    </div>    <script>
-    document.getElementById('orderForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent immediate submission
+      <button type="submit">Place Order</button>
+      <a href="home.html" class="home-btn">Home</a>
+    </form>
+    <div id="confirmation" style="display:none; margin-top:20px; color:green; text-align:center;">
+      Thank you! Your order has been placed.
+    </div>
+  </div>
+  <script>    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent immediate submission
+      const form = this;
 
-        const form = this;
+      // Show confirmation message
+      form.style.display = 'none';
+      document.getElementById('confirmation').style.display = 'block';
 
-        // Show confirmation message
-        form.style.display = 'none';
-        document.getElementById('confirmation').style.display = 'block';
-
-        // Submit form after showing confirmation
-        setTimeout(() => {
-            form.submit(); // Now actually submit the form
-        }, 2000); // Delay to show confirmation message
+      // Submit form after showing confirmation
+      setTimeout(() => {
+        form.submit(); // Now actually submit the form
+      }, 2000); // Delay to show confirmation message
     });
-</script>
-
-    </script>
+  </script>
+</body>
+</html>
 </body>
 </html>
