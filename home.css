@@ -2,17 +2,23 @@
 
 * {
   box-sizing: border-box;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
+    transform: scale(1);
   }
   50% {
     background-position: 100% 50%;
+    transform: scale(1.02);
   }
   100% {
     background-position: 0% 50%;
+    transform: scale(1);
   }
 }
 
@@ -63,15 +69,20 @@ body {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
+  animation-delay: 0s;
   background-attachment: fixed;
   color: #333;
   line-height: 1.6;
+  will-change: background-position;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 header {
   background: linear-gradient(-45deg, rgba(238, 119, 82, 0.9), rgba(231, 60, 126, 0.9), rgba(35, 166, 213, 0.9), rgba(35, 213, 171, 0.9));
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
+  animation-delay: 0s;
   backdrop-filter: blur(5px);
   color: #fff;
   padding: 30px 20px;
@@ -101,6 +112,7 @@ header {
   background: linear-gradient(-45deg, rgba(238, 119, 82, 0.9), rgba(231, 60, 126, 0.9), rgba(35, 166, 213, 0.9), rgba(35, 213, 171, 0.9));
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
+  animation-delay: 0s;
   padding: 15px 25px;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -133,6 +145,7 @@ nav {
   background: linear-gradient(-45deg, rgba(238, 119, 82, 0.9), rgba(231, 60, 126, 0.9), rgba(35, 166, 213, 0.9), rgba(35, 213, 171, 0.9));
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
+  animation-delay: 0s;
   backdrop-filter: blur(5px);
   padding: 12px 20px;
   text-align: center;
@@ -213,6 +226,7 @@ nav a:hover {
   background: linear-gradient(-45deg, rgba(238, 119, 82, 0.8), rgba(231, 60, 126, 0.8), rgba(35, 166, 213, 0.8), rgba(35, 213, 171, 0.8));
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
+  animation-delay: 0s;
   z-index: 0;
 }
 
@@ -325,19 +339,44 @@ nav a:hover {
 }
 
 .footer {
-  background-color: #005f73;
+  background: linear-gradient(-45deg, rgba(238, 119, 82, 0.9), rgba(231, 60, 126, 0.9), rgba(35, 166, 213, 0.9), rgba(35, 213, 171, 0.9));
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  animation-delay: 0s;
+  backdrop-filter: blur(5px);
   color: white;
   text-align: center;
   padding: 20px;
   font-size: 0.9em;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
 }
 
 a {
   color: #005f73;
+  transition: all 0.3s ease;
 }
 
 a:hover {
   text-decoration: underline;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+button, input[type="submit"] {
+  transition: all 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  will-change: transform;
 }
 
 @media (max-width: 768px) {
