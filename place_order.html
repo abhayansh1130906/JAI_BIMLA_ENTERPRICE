@@ -7,20 +7,19 @@
   <link rel="stylesheet" href="place_order.css">
 </head>
 <body>
-  <div class="container">
-    <h2>Place Order</h2>
-    <form target="_blank" action="https://formsubmit.co/abhayanshsharma71@gmail.com" method="POST">
-  <input type="hidden" name="_next" value="home.html">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_subject" value="New Order Received!">
+  <div class="container">    <h2>Place Order</h2>
+    <form action="https://formsubmit.co/abhayanshsharma71@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://file:///c:/Users/sharm/OneDrive/CODE/INSTALLER_FILE/JAI_BIMLA_ENTERPRICE/home.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="New Order Received!">
 
   <!-- Your form inputs remain unchanged -->
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" pattern="[A-Za-z\s\.\-']+" title="Please enter a valid name (only letters, spaces, dots, hyphens and apostrophes are allowed)" required>
 
       <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number.">
+      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number." required>
 
       <label for="address">Delivery Address</label>
       <textarea id="address" name="address" rows="3" required></textarea>
