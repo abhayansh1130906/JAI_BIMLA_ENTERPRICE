@@ -9,12 +9,13 @@
 <body>
   <div class="container">
     <h2>Place Order</h2>
-    <form id="orderForm" action="https://formsubmit.co/abhayanshsharma71@gmail.com" method="POST">
-      <input type="hidden" name="_next" value="home.html">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_subject" value="New Order Received!">
-      
+    <form target="_blank" action="https://formsubmit.co/abhayanshsharma71@gmail.com" method="POST">
+  <input type="hidden" name="_next" value="home.html">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_subject" value="New Order Received!">
+
+  <!-- Your form inputs remain unchanged -->
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" pattern="[A-Za-z\s\.\-']+" title="Please enter a valid name (only letters, spaces, dots, hyphens and apostrophes are allowed)" required>
 
@@ -36,22 +37,6 @@
     <div id="confirmation" style="display:none; margin-top:20px; color:green; text-align:center;">
       Thank you! Your order has been placed.
     </div>
-  </div>
-  <script>    document.getElementById('orderForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // Prevent immediate submission
-      const form = this;
-
-      // Show confirmation message
-      form.style.display = 'none';
-      document.getElementById('confirmation').style.display = 'block';
-
-      // Submit form after showing confirmation
-      setTimeout(() => {
-        form.submit(); // Now actually submit the form
-      }, 2000); // Delay to show confirmation message
-    });
-  </script>
-</body>
-</html>
+  </div>  
 </body>
 </html>
