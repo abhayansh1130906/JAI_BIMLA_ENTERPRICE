@@ -10,15 +10,12 @@
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
-    transform: scale(1);
   }
   50% {
     background-position: 100% 50%;
-    transform: scale(1.02);
   }
   100% {
     background-position: 0% 50%;
-    transform: scale(1);
   }
 }
 
@@ -65,7 +62,6 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  /* Animated gradient background */
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
@@ -73,9 +69,6 @@ body {
   background-attachment: fixed;
   color: #333;
   line-height: 1.6;
-  will-change: background-position;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
 }
 
 header {
