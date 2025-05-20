@@ -35,19 +35,22 @@
             Thank you! Your order has been placed.
         </div>
     </div>    <script>
-        document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Show confirmation message
-            this.style.display = 'none';
-            document.getElementById('confirmation').style.display = 'block';
-            
-            // Submit form and redirect
-            setTimeout(() => {
-                this.submit();
-                window.location.href = 'home.html';
-            }, 2000);
-        });
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent immediate submission
+
+        const form = this;
+
+        // Show confirmation message
+        form.style.display = 'none';
+        document.getElementById('confirmation').style.display = 'block';
+
+        // Submit form after showing confirmation
+        setTimeout(() => {
+            form.submit(); // Now actually submit the form
+        }, 2000); // Delay to show confirmation message
+    });
+</script>
+
     </script>
 </body>
 </html>
