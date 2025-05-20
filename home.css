@@ -121,6 +121,9 @@ header {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: 1px;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .company-info p {
@@ -395,6 +398,16 @@ img {
   nav a {
     display: inline-block;
     margin: 10px 8px;
+  }
+
+  .company-info {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 5px;
+  }
+
+  .company-info h1 {
+    font-size: 0.9em;
   }
 
   /* Responsive font sizes for mobile */
