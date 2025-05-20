@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="place_order.css">
 </head>
-<body>
-  <div class="container">    <h2>Place Order</h2>
-    <form action="https://formsubmit.co/abhayanshsharma71@gmail.com" method="POST">
-      <input type="hidden" name="_next" value="https://file:///c:/Users/sharm/OneDrive/CODE/INSTALLER_FILE/JAI_BIMLA_ENTERPRICE/home.html">
+<body>  <div class="container">
+    <h2>Place Order</h2>
+    <form id="orderForm" action="https://formsubmit.co/abhayanshsharma71@gmail.com" method="POST">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_subject" value="New Order Received!">
+      <input type="hidden" name="_next" value="https://formsubmit.co/abhayanshsharma71@gmail.com">
 
   <!-- Your form inputs remain unchanged -->
       <label for="name">Full Name</label>
@@ -32,10 +32,31 @@
 
       <button type="submit">Place Order</button>
       <a href="home.html" class="home-btn">Home</a>
-    </form>
-    <div id="confirmation" style="display:none; margin-top:20px; color:green; text-align:center;">
+    </form>    <div id="confirmation" style="display:none; margin-top:20px; color:green; text-align:center;">
       Thank you! Your order has been placed.
     </div>
-  </div>  
+  </div>
+
+  <script>
+    document.getElementById('orderForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Show confirmation message
+      this.style.display = 'none';
+      document.getElementById('confirmation').style.display = 'block';
+
+      // Submit the form data
+      const formData = new FormData(this);
+      await fetch(this.action, {
+        method: 'POST',
+        body: formData
+      });
+
+      // Wait for 1.5 seconds to show the confirmation message
+      setTimeout(() => {
+        window.location.href = 'home.html';
+      }, 1500);
+    });
+  </script>
 </body>
 </html>
