@@ -396,4 +396,64 @@ img {
     display: inline-block;
     margin: 10px 8px;
   }
+
+  /* Responsive font sizes for mobile */
+  .company-info h1 {
+    font-size: 1.4em;
+  }
+
+  .hero h2 {
+    font-size: 1.6em;
+  }
+
+  .section h2 {
+    font-size: 1.5em;
+  }
+
+  .section h3 {
+    font-size: 1.3em;
+  }
+
+  .section h4 {
+    font-size: 1.2em;
+  }
+
+  .section h5 {
+    font-size: 1.1em;
+  }
+
+  .typing-effect, .typing-effect-2 {
+    font-size: 0.9em;
+  }
+}
+
+/* Additional breakpoint for very small screens */
+@media (max-width: 480px) {
+  .company-info h1 {
+    font-size: 1.2em;
+  }
+
+  .hero h2 {
+    font-size: 1.4em;
+  }
+
+  .section h2 {
+    font-size: 1.3em;
+  }
+
+  .section h3 {
+    font-size: 1.2em;
+  }
+
+  .section h4 {
+    font-size: 1.1em;
+  }
+
+  .section h5 {
+    font-size: 1em;
+  }
+
+  .typing-effect, .typing-effect-2 {
+    font-size: 0.8em;
+  }
 }
