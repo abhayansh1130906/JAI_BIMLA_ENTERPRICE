@@ -344,6 +344,36 @@ nav a:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
+.contact-wrapper {
+  display: block;
+  max-width: 800px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.contact-info {
+  width: 100%;
+  text-align: left;
+}
+
+.contact-info h2 {
+  text-align: left;
+}
+
+.contact-info p {
+  margin: 10px 0;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+.contact-logo .logo:hover {
+  transform: scale(1.05);
+}
+
 .footer {
   background: linear-gradient(-45deg, rgba(238, 119, 82, 0.9), rgba(231, 60, 126, 0.9), rgba(35, 166, 213, 0.9), rgba(35, 213, 171, 0.9));
   background-size: 400% 400%;
@@ -437,6 +467,20 @@ img {
 
   .typing-effect, .typing-effect-2 {
     font-size: 0.9em;
+  }
+
+  .contact-wrapper {
+    padding-left: 10px;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-logo {
+    width: 100%;
+    max-width: 300px;
   }
 }
 
