@@ -77,6 +77,9 @@
         <h1>JAI BIMLA ENTERPRISES</h1>
       </div>
     </div>
+    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+    </button>
   </header>
     <nav>
     <a href="home.html">Home</a>
@@ -266,7 +269,9 @@
 
   <div class="footer">
     <p>&copy; 2025 JAI BIMLA ENTERPRISES PVT. LTD. | All rights reserved</p>
-  </div>  <script>
+  </div>  
+  <script>
+    // Scroll animation
     function checkScroll() {
       const sections = document.querySelectorAll('.section');
       sections.forEach(section => {
@@ -283,6 +288,33 @@
     window.addEventListener('load', checkScroll);
     // Check on scroll
     window.addEventListener('scroll', checkScroll);
+
+    // Dark mode toggle functionality
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const icon = darkModeToggle.querySelector('i');
+
+    // Check for saved user preference
+    const darkMode = localStorage.getItem('darkMode');
+    
+    // Set initial theme
+    if (darkMode === 'enabled') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        icon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+        // Toggle theme
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('darkMode', null);
+            icon.classList.replace('fa-sun', 'fa-moon');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('darkMode', 'enabled');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+    });
   </script>
 </body>
 </html>
